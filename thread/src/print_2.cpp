@@ -8,12 +8,14 @@
 #include <fcntl.h>
 using namespace std;
 static int a=0;
+static int b = 0;
+static int last_get = 1;
 void P(int semid, int index)
 {
     struct sembuf sem;
     sem.sem_num = index;
     sem.sem_op = -1;
-    sem.sem_flg = SEM_UNDO;
+    sem.sem_flg = 0;
     semop(semid, &sem, 1);
 }
 void V(int semid, int index)
@@ -21,53 +23,68 @@ void V(int semid, int index)
     struct sembuf sem;
     sem.sem_num = index;
     sem.sem_op = 1;
-    sem.sem_flg = SEM_UNDO;
+    sem.sem_flg = 0;
     semop(semid, &sem, 1);
 }
 void *subp1(void *arg)
 {
 
-    int semid = *((int *)arg);
+    int semid = ((int *)arg)[0];
    while(1)
     {
-        cout<<"thead-1 wait p "<<endl;
         P(semid, 0);
-        cout<<"thead-1 get p "<<endl;
         cout<<"a "<< a<< endl;
-        V(semid, 0);
+        V(semid, 1);
         if(a == 5050){
-            break;
+            pthread_exit(NULL);
         }
     }
-    pthread_exit(NULL);
+   
 }
 void *subp2(void *arg)
 {
-    int semid = *((int *)arg);
-    for (int i = 1; i <= 100; i++)
+    int semid = ((int *)arg)[0];
+    int adder = 1;
+    while (adder <= 100)
     {
-        cout<<"thead-2 wait p "<<endl;
-        P(semid, 0);
-        cout<<"thead-2 get p "<<endl;
-        a += i;
+        P(semid, 1);
+        a += adder;
+        adder++;
         V(semid, 0);
+        
+    }
+    pthread_exit(NULL);
+}
+void *add(void * arg){
+    int semid = ((int *)arg)[0];
+    for(int i=0;i<10000;i++){
+        P(semid,1);
+        b++;
+        V(semid,0);
     }
     pthread_exit(NULL);
 }
 int main()
 {
-    int semid = semget(IPC_PRIVATE, 1, IPC_CREAT | 0666);
+    int semid = semget(IPC_PRIVATE, 2, IPC_CREAT | 0666);
     pthread_t t1;
     pthread_t t2;
+    pthread_t t3;
     // 初值为1;
-
-    cout << " 初始化semid " << endl;
+    // 读信号灯
     semctl(semid, 0, SETVAL, 1);
-    cout << " 初始化semid 完成" << endl;
+    //最初设置为1，即打印线程检测到为1 时不打印
+    //写信号灯
+    semctl(semid,1,SETVAL,0);
     pthread_create(&t2, NULL, subp2, (void *)&semid);
     pthread_create(&t1, NULL, subp1, (void *)&semid);
+    // pthread_create(&t2, NULL, add, (void *)&semid);
+    // pthread_create(&t1, NULL, add, (void *)&semid);
+    // pthread_create(&t3, NULL, add, (void *)&semid);
     pthread_join(t1, NULL);
     pthread_join(t2, NULL);
+    // pthread_join(t3, NULL);
     // 关闭管道
     semctl(semid,0,IPC_RMID);
+    semctl(semid,1,IPC_RMID);
 }
