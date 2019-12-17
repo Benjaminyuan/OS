@@ -56,15 +56,19 @@ void *sell_tickets(void * arg){
     int semid = ((int*)arg)[0];
     int thread_id = ((int*)arg)[1];
     cout<<"thread: "<< thread_id <<" start" <<endl;
+    bool should_break = false;
     while (1)
     {
         srand((unsigned int)time(NULL));
         int buy_tickets =rand() % TICKETS_RANGE + 1;
         P(semid,0);
         MODIFYSTATUS status =  modifiy_ticket(buy_tickets,thread_id);
-        V(semid,0);
         if(status == SOLDOUT){
             cout<<"thread " << thread_id << " quit " <<endl;
+            should_break = true;
+        }
+        V(semid,0);
+        if(should_break){
             break;
         }
         sleep(1);
