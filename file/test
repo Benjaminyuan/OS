@@ -1,0 +1,207 @@
+|-dir:.git,depth:0
+|-file:ORIG_HEAD,depth:1
+|-dir:objects,depth:1
+|	|-dir:1d,depth:2
+|		|-file:1ad37be388df0e7853fc7d52cd106518f41a14,depth:3
+|	|-dir:dd,depth:2
+|		|-file:705db57f3aadde500e72388824581cc27b132e,depth:3
+|	|-dir:65,depth:2
+|		|-file:2b0c306a36909f793ca7a50efb625dd7437e1b,depth:3
+|	|-dir:68,depth:2
+|		|-file:0dd8c071471679c7eb7c123514a9ad952fb90e,depth:3
+|	|-dir:23,depth:2
+|		|-file:cb21cfc0d30ff981c2675bfff7c743c167a1d8,depth:3
+|	|-dir:97,depth:2
+|		|-file:7ff6c9a53d71b03a00b751fb8457962e6d70d7,depth:3
+|		|-file:da49466f2f134bfd996850c26758d9842987fd,depth:3
+|	|-dir:24,depth:2
+|		|-file:6449fbcd839ce4811422b42d6a5935f7b62282,depth:3
+|	|-dir:pack,depth:2
+|		|-file:pack-f27642866c60c98eb1ea62c1d08fe06b19aea38c.idx,depth:3
+|		|-file:pack-f27642866c60c98eb1ea62c1d08fe06b19aea38c.pack,depth:3
+|	|-dir:37,depth:2
+|		|-file:d73fa9f5cc6ae50057522f35c696661cd74a6e,depth:3
+|	|-dir:73,depth:2
+|		|-file:d1db88332728e161ab28acc2dd9aa1f3581428,depth:3
+|	|-dir:ac,depth:2
+|		|-file:f72e94ee6e881c0e86be00bd0cbdc5c5ca85ce,depth:3
+|	|-dir:12,depth:2
+|		|-file:657fbe1c372c9886768af78107e684c4e20714,depth:3
+|	|-dir:d5,depth:2
+|		|-file:40c9208b7a5874bc569ba3af0391ab7b65688d,depth:3
+|	|-dir:36,depth:2
+|		|-file:f55e094626d6c751f9f8aaf8cc3d9e75221f40,depth:3
+|		|-file:948c6aeb0e4072d9822413640c668bae27275b,depth:3
+|	|-dir:69,depth:2
+|		|-file:1e39a2ee214d80f1aeefa0e920ecfc850e9913,depth:3
+|	|-dir:30,depth:2
+|		|-file:47d28e7146453e10a288535cc007a196c1ae4f,depth:3
+|	|-dir:info,depth:2
+|	|-dir:71,depth:2
+|		|-file:c304f6f68f6f11b88d6a0a872d2d8f09b96fa7,depth:3
+|	|-dir:0d,depth:2
+|		|-file:ce7bedd040e1b2068c191e842f6dceac395034,depth:3
+|	|-dir:de,depth:2
+|		|-file:4c280981e3b19b4f6ef9e044c753688a2b9dc0,depth:3
+|	|-dir:1f,depth:2
+|		|-file:a8b1623c12e1479b114911a501d738de920f89,depth:3
+|	|-dir:c5,depth:2
+|		|-file:a7da480a789a1aa8b4fa4fdf07e1a9dfc9ae69,depth:3
+|	|-dir:f6,depth:2
+|		|-file:a24ecb83d7919a7a46c9a96a9f626f819e79dd,depth:3
+|	|-dir:42,depth:2
+|		|-file:326d79423381568112ec78a8ceb611efc63dbb,depth:3
+|	|-dir:53,depth:2
+|		|-file:097db25efec298f78fd40babb4d4c537f31978,depth:3
+|	|-dir:4a,depth:2
+|		|-file:5cbde61f03acbcef88a434e02415416be57efd,depth:3
+|	|-dir:3b,depth:2
+|		|-file:93caa676f93102b32c4aec5eb74d6996b32424,depth:3
+|	|-dir:0e,depth:2
+|		|-file:7e751e9a913d97a7b1c83732b4a239348f258d,depth:3
+|	|-dir:45,depth:2
+|		|-file:dd5b4efad04cb904e61ad255b414b6244c7783,depth:3
+|	|-dir:cc,depth:2
+|		|-file:bf4a9d6ebadc5f91afc7e63411f74f4923904c,depth:3
+|	|-dir:74,depth:2
+|		|-file:3414fcd94e9e00f047903b9e5a480901253849,depth:3
+|	|-dir:a9,depth:2
+|		|-file:af4eed9be2a936a28a886ba96311d5f0febd92,depth:3
+|	|-dir:09,depth:2
+|		|-file:5710cf2dd5c0383430513c0304394a8fbf71ae,depth:3
+|		|-file:4f1c115993a06811f98ba3bd73d6558be6c960,depth:3
+|	|-dir:d4,depth:2
+|		|-file:7235a7aa4969c38b3f1d6a7dca2bc19c7eb263,depth:3
+|	|-dir:bb,depth:2
+|		|-file:f62c7e65d8d9a4ff5aed0c1bc4c7c2e3f6606b,depth:3
+|	|-dir:7f,depth:2
+|		|-file:3eb27ddea26c29af09f01c73d7361fee277b02,depth:3
+|	|-dir:3a,depth:2
+|		|-file:57489f9a3fa96de597a3dc291e298868750cf6,depth:3
+|	|-dir:18,depth:2
+|		|-file:a6f9f114f52ffc5d4512ba15ec7401901848bd,depth:3
+|	|-dir:cb,depth:2
+|		|-file:e363325ee86f5ecb2de163f453056433fa3ca4,depth:3
+|	|-dir:5a,depth:2
+|		|-file:7b1a9e5cfb5dda617f45688eec22574aa28af8,depth:3
+|		|-file:bc02c2e16a30bd82b848ea9a73c383851d294c,depth:3
+|	|-dir:f9,depth:2
+|		|-file:41bb59dcf062f3a7adc7180e712e277150f1e3,depth:3
+|	|-dir:7c,depth:2
+|		|-file:227c9ec117287cb175f1755506f43c6f9ef82f,depth:3
+|		|-file:6e9c1226b0b252481dbaa8b594a3dbc8cc1a53,depth:3
+|	|-dir:ba,depth:2
+|		|-file:67c6c02b1a141935aca61966fce598d05958bc,depth:3
+|	|-dir:fc,depth:2
+|		|-file:6c369d3bd7435d4e71abec38bdc6fa529b0c9e,depth:3
+|	|-dir:df,depth:2
+|		|-file:b47aece34bda485522b9c9fcc48b02ea3344dd,depth:3
+|	|-dir:63,depth:2
+|		|-file:2a35a0292097667e0db475e58bcfcbe6a0b6d5,depth:3
+|	|-dir:bf,depth:2
+|		|-file:00ddc3e947d65685f0f7caec47c4794fe89c42,depth:3
+|	|-dir:fa,depth:2
+|		|-file:c54286f8c86f40a72977d798a41341f43f960d,depth:3
+|	|-dir:2a,depth:2
+|		|-file:065438b22cca1b794f868b694ee2878f961d94,depth:3
+|	|-dir:eb,depth:2
+|		|-file:b23b92cddb9a16349a298dfa06d985837ad70c,depth:3
+|	|-dir:91,depth:2
+|		|-file:cdb4b05d6c080e274c0a35112f71bd4d15600e,depth:3
+|	|-dir:6f,depth:2
+|		|-file:0829f47274554cf26abe0b50337e6c8a1c0a85,depth:3
+|	|-dir:a6,depth:2
+|		|-file:217f396fa9f27b7d1e772400e074d3b772f6c5,depth:3
+|	|-dir:5f,depth:2
+|		|-file:a1225abd03cb1eb3e62d2dafbb1d9ac30fe2bc,depth:3
+|	|-dir:07,depth:2
+|		|-file:4c68e3106936183d5a99783f9451cfe014f67a,depth:3
+|	|-dir:6a,depth:2
+|		|-file:c2982cad98b876007521bd1c7f491549770505,depth:3
+|	|-dir:ad,depth:2
+|		|-file:16f11aaaf6d592714cb5fecf2083b1f0eb9de5,depth:3
+|	|-dir:5c,depth:2
+|		|-file:808276449ba2e6a8a27b7a02dba4b99aa7f25d,depth:3
+|	|-dir:43,depth:2
+|		|-file:efadb6f43a122215228516ecd61ffc6568ce47,depth:3
+|	|-dir:e2,depth:2
+|		|-file:58e6c3b2f839a72a91d14eeed085b759d2d739,depth:3
+|		|-file:77a6da55eb97916ed2b88301599e4ebc6d0835,depth:3
+|	|-dir:64,depth:2
+|		|-file:009393f5eca1092ace5d73c3b8dfe3513b77cd,depth:3
+|		|-file:6ced3027e139dac067f54310b810f283c692fb,depth:3
+|-file:packed-refs,depth:1
+|-dir:refs,depth:1
+|	|-dir:heads,depth:2
+|		|-file:master,depth:3
+|	|-dir:remotes,depth:2
+|		|-dir:origin,depth:3
+|			|-file:HEAD,depth:4
+|			|-file:master,depth:4
+|	|-dir:tags,depth:2
+|-dir:info,depth:1
+|	|-file:exclude,depth:2
+|-file:HEAD,depth:1
+|-dir:branches,depth:1
+|-file:index,depth:1
+|-dir:logs,depth:1
+|	|-dir:refs,depth:2
+|		|-dir:heads,depth:3
+|			|-file:master,depth:4
+|		|-dir:remotes,depth:3
+|			|-dir:origin,depth:4
+|				|-file:HEAD,depth:5
+|				|-file:master,depth:5
+|	|-file:HEAD,depth:2
+|-file:FETCH_HEAD,depth:1
+|-dir:hooks,depth:1
+|	|-file:pre-push.sample,depth:2
+|	|-file:update.sample,depth:2
+|	|-file:commit-msg.sample,depth:2
+|	|-file:prepare-commit-msg.sample,depth:2
+|	|-file:pre-commit.sample,depth:2
+|	|-file:pre-applypatch.sample,depth:2
+|	|-file:applypatch-msg.sample,depth:2
+|	|-file:post-update.sample,depth:2
+|	|-file:pre-rebase.sample,depth:2
+|-file:description,depth:1
+|-file:config,depth:1
+|-file:COMMIT_EDITMSG,depth:1
+|-dir:thread,depth:0
+|-dir:.vscode,depth:1
+|	|-file:settings.json,depth:2
+|-dir:out,depth:1
+|	|-file:thread,depth:2
+|	|-file:ticket,depth:2
+|	|-file:print_2,depth:2
+|	|-file:print,depth:2
+|-dir:src,depth:1
+|	|-file:temp.cpp,depth:2
+|	|-file:print_2.cpp,depth:2
+|	|-file:print.cpp,depth:2
+|	|-file:ticket.cpp,depth:2
+|	|-file:t,depth:2
+|-dir:.vscode,depth:0
+|-file:settings.json,depth:1
+|-file:.gitignore,depth:0
+|-dir:file,depth:0
+|-dir:out,depth:1
+|	|-file:test,depth:2
+|	|-file:file,depth:2
+|-file:test,depth:1
+|-file:file.cpp,depth:1
+|-file:README.md,depth:0
+|-dir:kernel,depth:0
+|-file:hello.cpp,depth:1
+|-dir:process,depth:0
+|-dir:out,depth:1
+|	|-file:pro,depth:2
+|-dir:src,depth:1
+|	|-file:process.cpp,depth:2
+|-dir:ipc_sharemem,depth:0
+|-dir:out,depth:1
+|	|-file:read_write,depth:2
+|-dir:src,depth:1
+|	|-file:input,depth:2
+|	|-file:output,depth:2
+|	|-file:read_write.cpp,depth:2
