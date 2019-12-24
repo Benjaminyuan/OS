@@ -13,9 +13,9 @@ void file_gid_uid(int uid, int gid)
     struct passwd *ptr;
     struct group *str; //结构体中存放文件所有者名和文件所有者组名
 
-    ptr = getpwuid(uid);                            //调用函数获取文件所有者指针
-    str = getgrgid(gid);                            //调用函数获取文件所有者组指针
-    printf("\t%s\t%s", ptr->pw_name, str->gr_name); //打印文件所有者和文件所有者组
+    ptr = getpwuid(uid);                          //调用函数获取文件所有者指针
+    str = getgrgid(gid);                          //调用函数获取文件所有者组指针
+    printf(" %s %s", ptr->pw_name, str->gr_name); //打印文件所有者和文件所有者组
 }
 void file_mode(struct stat *buf)
 {
@@ -82,16 +82,15 @@ void file_mode(struct stat *buf)
         printf("%c", buff[i]); //循环打印
     }
 }
-void print_detail( struct stat* buf,dirent * sub_dir)
+void print_detail(struct stat *buf, dirent *sub_dir, int depth)
 {
-    // printf("|-");
     file_mode(buf);
-    printf("  %d", buf->st_nlink);         //打印链接数
+    printf(" %d", buf->st_nlink);           //打印链接数
     file_gid_uid(buf->st_uid, buf->st_gid); //调用函数打印出文件拥有者和文件所有者组
-    printf("\t%ld", buf->st_size);         //打印文件大小
-    //Time();//获取时间
-    printf("\t%.12s ", 4 + ctime(&(buf->st_mtime)));
-    printf("   %s\n", sub_dir->d_name);
+    printf(" %ld", buf->st_size);           //打印文件大小
+    printf(" %.12s", strtok(4 + ctime(&(buf->st_mtime)), "\n"));
+    printf(" %s", sub_dir->d_name);
+    printf(" %d\n", depth);
 }
 void print_dir(const char *file_name, int depth)
 {
@@ -103,9 +102,9 @@ void print_dir(const char *file_name, int depth)
     }
     chdir(file_name);
     dirent *sub_dir;
-    struct stat buf;
     while ((sub_dir = readdir(dir)) != NULL)
     {
+        struct stat buf;
         lstat(sub_dir->d_name, &buf);
         if (S_ISDIR(buf.st_mode))
         {
@@ -113,27 +112,27 @@ void print_dir(const char *file_name, int depth)
             {
                 continue;
             }
-            for (int i = 0; i < depth - 1; i++)
+            for (int i = 0; i < depth; i++)
             {
                 printf("\t");
             }
-            print_detail(&buf,sub_dir);
+            print_detail(&buf, sub_dir, depth);
             print_dir(sub_dir->d_name, depth + 1);
         }
         else
         {
-            for (int i = 0; i < depth - 1; i++)
+            for (int i = 0; i < depth; i++)
             {
                 printf("\t");
             }
-            print_detail(&buf,sub_dir);
+            print_detail(&buf, sub_dir, depth);
         }
     }
     chdir("..");
     closedir(dir);
     return;
 }
-const char *FILENAME = "/root/OS";
+const char *FILENAME = "/";
 int main()
 {
     print_dir(FILENAME, 0);
