@@ -9,9 +9,11 @@
 #include <sys/wait.h>
 #include <sys/sem.h>
 #include <sys/stat.h>
+#include<ctime>
 #include <fcntl.h>
-#define BUFFSIZE 20
+#define BUFFSIZE 200
 #define BLOCK_NUM 10
+#define SEM_NUM 5
 void P(int semid, int index)
 {
     struct sembuf sem;
@@ -32,7 +34,7 @@ int main(int argc, char *argv[])
 {
     int semid = semget(IPC_PRIVATE, 2, IPC_CREAT | 0666);
     // write
-    semctl(semid, 0, SETVAL, BLOCK_NUM);
+    semctl(semid, 0, SETVAL, SEM_NUM);
     // read
     semctl(semid, 1, SETVAL, 0);
     int write_cur = 0,read_cur = 0;
@@ -62,7 +64,6 @@ int main(int argc, char *argv[])
     // 写进程
     if (p1 == 0)
     {
-        printf("p1\n");
         int f = open("./input", O_RDONLY);
         int m = 0 ;
         bool should_break = false;
@@ -74,14 +75,9 @@ int main(int argc, char *argv[])
             if(m == 0){
                 should_break = true;
             }
-            if(write_cur == 9){
-                write_cur = 0;
-            }else{
-                write_cur = write_cur +1;
-            }
+            write_cur = (write_cur+1)%BLOCK_NUM;
             V(semid,1);
             if(should_break){
-                printf("p1 exit");
                 break;
             }
         }
@@ -94,24 +90,17 @@ int main(int argc, char *argv[])
     {
         bool should_break = false;
         int f = open("./output",O_WRONLY | O_CREAT);
-        printf("p2\n");
         while (1)
         {
             P(semid, 1);
             int len = strlen(buffs[read_cur]);
             int m = write(f,buffs[read_cur],len);
-            printf("data = [%s],len:%d,m: %d\n", buffs[read_cur],(int)strlen(buffs[read_cur]),m);
             bzero(buffs[read_cur],BUFFSIZE);
             if(m == 0){     
-                printf("p2 exit");
                 V(semid, 0);
                 break;
             }
-            if(read_cur == 9){
-                read_cur = 0;
-            }else{
-                read_cur++;
-            }
+            read_cur = (read_cur+1)%BLOCK_NUM;
             V(semid, 0);
         }
         return 0;
@@ -120,11 +109,9 @@ int main(int argc, char *argv[])
     int status_2;
     waitpid(p1, &status_1, 0);
     waitpid(p2, &status_2, 0);
-    printf("%d,%d", status_1, status_2);
     semctl(semid, 0, IPC_RMID);
     semctl(semid, 1, IPC_RMID);
     for(int i=0;i<BLOCK_NUM;i++){
         shmctl(shmids[i],IPC_RMID,NULL);
     }
-    system("ipcs -m"); //查看共享内存
 }
