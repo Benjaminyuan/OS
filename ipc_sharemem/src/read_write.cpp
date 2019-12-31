@@ -89,6 +89,7 @@ int main(int argc, char *argv[])
         return 0;
     }
     // 读进程
+    p2 = fork();
     if (p2 == 0)
     {
         bool should_break = false;
