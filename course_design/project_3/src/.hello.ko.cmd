@@ -1,0 +1,1 @@
+cmd_/root/OS/course_design/project_3/src/hello.ko := ld -r -m elf_x86_64  -z max-page-size=0x200000  --build-id  -T ./scripts/module-common.lds -o /root/OS/course_design/project_3/src/hello.ko /root/OS/course_design/project_3/src/hello.o /root/OS/course_design/project_3/src/hello.mod.o;  true
