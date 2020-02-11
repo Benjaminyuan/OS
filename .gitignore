@@ -2,6 +2,7 @@
 *.d
 .vscode/
 out/
+.idea/
 # Compiled Object files
 *.slo
 *.lo
