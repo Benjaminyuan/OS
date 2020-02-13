@@ -67,10 +67,17 @@ struct file_operations {
 ### Makefile
     * 在自定义模块源代码的树目录下建立一个Makefile文件同时添加
     ```makefile
-    # 单个源文件的Makefile
-    obj-m := dev.o
-
-    #多个源文件的Makefile
-    obj-m := dev.o
-    dev-objs := dev_1.o dev_2.o
+    obj-m += hello.o
+    all:
+        make -C /lib/modules/$(shell uname -r)/build M=$(shell pwd) modules
+    clean:
+        make -C /lib/modules/$(shell uname -r)/build M=$(shell pwd) clean
     ```
+### load模块
+> insmod hello.ko
+> rmmod hello 卸载设备
+> modinfo hello 查看设备信息
+### 创建设备文件
+> mknod /dev/hello c 111 0命令创建设备文件 另外可以自动创建设备节点
+### 调试
+> dmesg 查看printk输出
