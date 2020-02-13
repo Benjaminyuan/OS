@@ -26,15 +26,15 @@ static const struct modversion_info ____versions[]
 __used __section(__versions) = {
 	{ 0x50a74865, "module_layout" },
 	{ 0xdecd0b29, "__stack_chk_fail" },
+	{ 0x9b4a77eb, "kernel_write" },
 	{ 0xf07eb9e4, "filp_close" },
-	{ 0x2ea2c95c, "__x86_indirect_thunk_rax" },
-	{ 0xf905b5de, "current_task" },
-	{ 0xf8af0dcd, "filp_open" },
+	{ 0x911c14c0, "kernel_read" },
 	{ 0xc5850110, "printk" },
+	{ 0xf8af0dcd, "filp_open" },
 	{ 0xbdfb6dbb, "__fentry__" },
 };
 
 MODULE_INFO(depends, "");
 
 
-MODULE_INFO(srcversion, "5E661087890C458110FA83B");
+MODULE_INFO(srcversion, "679DB366734E4C0B5450879");
