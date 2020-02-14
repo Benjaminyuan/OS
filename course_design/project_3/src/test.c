@@ -9,6 +9,7 @@ char buff[128];
 int main()
 {
     int fd, m, n;
+    char* write_data = "hBenjiBenji";
     fd = open("/dev/hello", O_RDWR);
     if (fd < 0) {
         fprintf(stderr, "open file \"/dev/hello\" failed\n");
@@ -21,7 +22,7 @@ int main()
     }
     printf("\n");
     llseek(fd, 0, 0);
-    n = write(fd, "hBenjiBenji", 13);
+    n = write(fd, write_data, 13);
     printf("write length: %d\n", n);
     
     llseek(fd, 0, 0);

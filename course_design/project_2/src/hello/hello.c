@@ -6,6 +6,5 @@ int main()
 {
          long int amma = syscall(548);
          printf("System call sys_hello returned %ld\n", amma);
-         hello();
          return 0;
 }

@@ -31,7 +31,7 @@ static ssize_t my_read(struct file * fd, char * user_buf, size_t count, loff_t *
 static ssize_t my_write(struct file * fd , const char * user_buf, size_t count , loff_t * offset)
 {
     size_t avail;
-    printk(KERN_INFO "write,buff_len:%d,offset:%d\n",sizeof(buff),*offset);
+    printk(KERN_INFO "write,buff_len:%d,offset:%d,\n",sizeof(buff),*offset);
     avail = sizeof(buff) - *offset;
     memset(buff + *offset, 0, avail);
     if(count <= avail) {
