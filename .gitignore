@@ -12,7 +12,7 @@ out/
 # Precompiled Headers
 *.gch
 *.pch
-
+*.cmd
 # Compiled Dynamic libraries
 *.so
 *.dylib

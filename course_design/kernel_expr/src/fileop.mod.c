@@ -31,11 +31,10 @@ __used __section(__versions) = {
 	{ 0x911c14c0, "kernel_read" },
 	{ 0xf8af0dcd, "filp_open" },
 	{ 0xc5850110, "printk" },
-	{ 0x362ef408, "_copy_from_user" },
 	{ 0xbdfb6dbb, "__fentry__" },
 };
 
 MODULE_INFO(depends, "");
 
 
-MODULE_INFO(srcversion, "F989B5B5A008AD7839CE01E");
+MODULE_INFO(srcversion, "9F5560DE093EB6427E7D0C2");
